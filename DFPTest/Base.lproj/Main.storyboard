@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DFPTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kjg-05-4N8">
+                                <rect key="frame" x="53" y="60" width="269" height="29"/>
+                                <segments>
+                                    <segment title="Fixed Size 300x250"/>
+                                    <segment title="Flexible Width"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bannerWidthChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="T8Y-a1-Ttu"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-O3-djI">
+                                <rect key="frame" x="137.5" y="102" width="100" height="30"/>
+                                <state key="normal" title="Reload Banner"/>
+                                <connections>
+                                    <action selector="reloadBannerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="doU-mu-pfa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07r-yP-71O">
+                                <rect key="frame" x="162.5" y="144" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjK-I6-JQy">
+                                <rect key="frame" x="164.5" y="173" width="46" height="30"/>
+                                <state key="normal" title="Debug"/>
+                                <connections>
+                                    <action selector="openDebugOptionsWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBd-Bc-zx9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="07r-yP-71O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Nc-nd-05I"/>
+                            <constraint firstItem="kjg-05-4N8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="Lkc-uk-Okk"/>
+                            <constraint firstItem="kjg-05-4N8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UjL-l6-FvJ"/>
+                            <constraint firstItem="ZjK-I6-JQy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aqJ-kA-OBa"/>
+                            <constraint firstItem="JwI-O3-djI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bRu-jq-E0d"/>
+                            <constraint firstItem="JwI-O3-djI" firstAttribute="top" secondItem="kjg-05-4N8" secondAttribute="bottom" constant="14" id="dja-V6-3ZK"/>
+                            <constraint firstItem="ZjK-I6-JQy" firstAttribute="top" secondItem="07r-yP-71O" secondAttribute="bottom" constant="8" id="gWC-cS-Oua"/>
+                            <constraint firstItem="07r-yP-71O" firstAttribute="top" secondItem="JwI-O3-djI" secondAttribute="bottom" constant="12" id="job-a2-hgL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bannerLoadingStatus" destination="07r-yP-71O" id="eY5-ie-bDr"/>
+                        <outlet property="bannerWidthSegmentedControl" destination="kjg-05-4N8" id="4FP-1z-aze"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
